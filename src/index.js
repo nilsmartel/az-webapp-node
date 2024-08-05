@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT
+
+if (!port) throw "PORT env musn't be empty"
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
